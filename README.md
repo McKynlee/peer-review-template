@@ -16,32 +16,32 @@ Practicing compassionate code reviews is important (you can learn more from this
 ## Base Required Features 
 
 - Multi-Part Form:  
-  - [ ] Able to add feedback
-    - [ ] Data collected on individual pages & components
-    - [ ] Click on next takes you to the next page in sequence
-    - [ ] Data saves in DB after *all* the parts are completed (not piecemeal)
-    - [ ] Thank you page takes you back to the first view
-    - [ ] Old Data is cleared on form completion
+  - [x] Able to add feedback
+    - [x] Data collected on individual pages & components
+    - [x] Click on next takes you to the next page in sequence
+    - [x] Data saves in DB after *all* the parts are completed (not piecemeal)
+    - [x] Thank you page takes you back to the first view
+    - [x] Old Data is cleared on form completion
 
 - Client code:
-  - [ ]  Individual components for each form part
-  - [ ]  Redux setup complete
-    - [ ] Store linked to react with `<Provider>`
-    - [ ] Store setup with reducer(s) and logger middleware 
+  - [x]  Individual components for each form part
+  - [x]  Redux setup complete
+    - [x] Store linked to react with `<Provider>`
+    - [x] Store setup with reducer(s) and logger middleware 
   - [ ] Reducers & Actions Working
-    - [ ] Actions are in SCREAMING_SNAKE_CASE and semantically named
-    - [ ] Actions have a `type` key, and `payload` if sending data
-    - [ ] Reducers are returning a new state, or the old state (not mutating)
-    - [ ] Reducers are using spread correctly (to keep old data, while adding new)
+    - [x] Actions are in SCREAMING_SNAKE_CASE and semantically named
+    - [x] Actions have a `type` key, and `payload` if sending data
+    - [x] Reducers are returning a new state, or the old state (not mutating)
+    - [NA] Reducers are using spread correctly (to keep old data, while adding new)
   - [ ] Review Component shows at all times with current redux state
-  - [ ] React-Redux Working
+  - [x] React-Redux Working
     - [ ] `connect`ing components correctly & dispatching Actions onClick
     - [ ] `mapStateToProps` when data is needed from Redux for submission
-  - [ ] Axios POST request to add feedback
+  - [x] Axios POST request to add feedback
 
 
 - Server code:   
-  - [ ] Router made for GET, POST
+  - [x] Router made for GET, POST
 
 
 ## General Items
@@ -88,40 +88,44 @@ First must be complete for score of _5 - Exceeds Expectations_
 ## Markdown
 
 ```
-Hey ___,
+Hey Johnny Goth,
 
-General Feedback.
-
+Awesome job on this app!  The layout is crisp and clean- I like your spacing on stuff.
+I wrote notes below - I am a verbose person, so the length of notes is about me, not you!  I really like your app - well done on mastering redux/routers!!
 ---
 | Functional Requirements | Complete? |
 | --- | :---: |
-| Multi page form with client side routing and navigation (next button) | no |
-| Data stored in Redux when navigating from page to page | no |
-| User is notified when trying to leave a blank score | no |
-| Review Component displays scores and comments from current redux state | no |
-| Submit button sends data to the server via Axios | no |
-| Confirmaion Page displays after data is POSTed to the server | no |
+| Multi page form with client side routing and navigation (next button) | yes |
+| Data stored in Redux when navigating from page to page | yes |
+| User is notified when trying to leave a blank score | yes |
+| Review Component displays scores and comments from current redux state | yes |
+| Submit button sends data to the server via Axios | yes |
+| Confirmaion Page displays after data is POSTed to the server | yes |
 | Button on Confirmation Page clears Redux and starts a new survey | no |
-| Views are broken down into components | no |
+| Views are broken down into components | yes |
 
 ---
 ### Notes:
 
-Notes on the above Functional Requirements.
+I love that you used number inputs to ensure the input stays within range, and that an alert shows up if it is left blank!  I noticed that if I leave the comment input empty, the Reducer breaks.  You might change that to either allow empty inputs, or give an alert that they have to say something (I think the instructions said ok to leave blank).
+It took me a second to find the Review component since it is named 'Feedback'.  Something to consider to help when we've got a lot of components going on.
+Super nice work on all of the routing and collecting the inputs!
+Your current setup keeps the most recent inputs displaying on the review page instead of clearing them.  Not a huge deal, but you could also dispatch a CLEAR_INPUTS in the .then of your Feedback component post to reset your reducer and start fresh.
+I saw some unused imports (like axios, useState and useEffect on the App.jsx component.  You may have been planning to incorporate those in the next stages of work, but if not you could go ahead and delete them to keep things clean.
 
 ---
 | General Items | Complete? |
 | --- | :---: |
-| More than 15 git commits | no |
-| Commits are descriptive of the changes made or feature added | no |
-| Readme file updated | no |
+| More than 15 git commits | no- 14 |
+| Commits are descriptive of the changes made or feature added | yes |
+| Readme file updated | To-Do |
 | Appropriate amount of code comments | no |
-| Code is consistently formatted | no |
-| Server code organized with router & module files | no |
-
+| Code is consistently formatted | yes |
+| Server code organized with router & module files | yes |
 ---
 ### Notes:
 
-Notes on General Items
-
+I really like the code comments you do have- I'd like to see more of them.  If I hadn't also done this project myself, it would take me some time to figure out what each component was doing.  A little explanation about what each component/function is for would be nice from an outside perspective.  Your code is generally very clean, though - bravo!
+Eventually having a README that describes your app will be good for showing it off to employers (and how you are able to explain your app and show some screenshots).
+Overall, nice work!  Thanks for sharing it with me.
 ```
